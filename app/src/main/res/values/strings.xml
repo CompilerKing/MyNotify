@@ -1,4 +1,8 @@
 <resources>
     <string name="app_name">MyNotify</string>
     <string name="action_settings">Settings</string>
+
+    <!--TODO: Replace with correct icon paths - current are just placeholders -->
+    <string name="has_link_icon">@mipmap/ic_launcher_round</string>
+    <string name="has_image_icon">@mipmap/ic_launcher_round</string>
 </resources>
