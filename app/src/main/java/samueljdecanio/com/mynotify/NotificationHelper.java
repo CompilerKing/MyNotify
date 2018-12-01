@@ -20,9 +20,22 @@ public class NotificationHelper {
     private NotificationHelper(Context context) {
         //TODO: Set up fake notifcations in here for sample data before creating database
         mNotifications = new ArrayList<OurNotification>();
+        this.createFakeNotifications();
     }
 
     public List<OurNotification> getOurNotifications() {
         return this.mNotifications;
+    }
+
+    private void createFakeNotifications() {
+        OurNotification fake1 = new OurNotification("title1", "desc1", 100, true, true);
+        OurNotification fake2 = new OurNotification("title2", "desc2", 200, true, true);
+        OurNotification fake3 = new OurNotification("title3", "desc3", 300, true, true);
+        OurNotification fake4 = new OurNotification("title4", "desc4", 400, true, true);
+
+        this.mNotifications.add(fake1);
+        this.mNotifications.add(fake2);
+        this.mNotifications.add(fake3);
+        this.mNotifications.add(fake4);
     }
 }
