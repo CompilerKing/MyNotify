@@ -1,5 +1,5 @@
 <resources>
-    <string name="app_name">MyNotify</string>
+    <string name="app_name">MyNotify!</string>
     <string name="action_settings">Settings</string>
 
     <!--TODO: Replace with correct icon paths - current are just placeholders -->
