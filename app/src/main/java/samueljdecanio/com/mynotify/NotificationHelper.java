@@ -4,6 +4,7 @@ import android.content.Context;
 
 import java.util.ArrayList;
 import java.util.List;
+import java.util.UUID;
 
 public class NotificationHelper {
     private static NotificationHelper sNotificationHelper;
@@ -25,6 +26,16 @@ public class NotificationHelper {
 
     public List<OurNotification> getOurNotifications() {
         return this.mNotifications;
+    }
+
+    public OurNotification getOurNotification(UUID notificationId) {
+        for (OurNotification notif : mNotifications) {
+            if (notif.getId().equals(notificationId)) {
+                return notif;
+            }
+        }
+
+        return null;
     }
 
     private void createFakeNotifications() {
