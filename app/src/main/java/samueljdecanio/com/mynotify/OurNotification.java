@@ -1,25 +1,27 @@
 package samueljdecanio.com.mynotify;
 
+import java.text.DateFormat;
+import java.text.ParseException;
+import java.text.SimpleDateFormat;
+import java.util.ArrayList;
+import java.util.Calendar;
+import java.util.Date;
+import java.util.GregorianCalendar;
 import java.util.UUID;
 
 public class OurNotification {
     private UUID id;
     private String title;
     private String details;
-    private int timeOfNotification; //using unix timestamp
-    private boolean hasPhoto;
-    private boolean hasLink;
+    private Calendar getDateTimeOfNotification; //using unix timestamp
+    private boolean hasPhoto = false;
+    private boolean hasLink = false;
+    private ArrayList<String> links;
 
-    //TODO: This will need to be modified to accommodate real data
-    public OurNotification(String title, String details,
-                           int timeOfNotification, boolean hasLink,
-                           boolean hasPhoto) {
-        this.id = UUID.randomUUID();
-        this.title = title;
-        this.details = details;
-        this.timeOfNotification = timeOfNotification;
-        this.hasLink = hasLink;
-        this.hasPhoto = hasPhoto;
+    public OurNotification(UUID uuid) {
+        this.id = uuid;
+        this.getDateTimeOfNotification = Calendar.getInstance();
+        links = new ArrayList<>();
     }
 
     public UUID getId() {
@@ -46,19 +48,12 @@ public class OurNotification {
         this.details = details;
     }
 
-    //TODO: Change time functions to return correct time format
-    public int getTimeOfNotification() {
-        return timeOfNotification;
+    public Calendar getDateTimeOfNotification() {
+        return getDateTimeOfNotification;
     }
 
-    //TODO: Change time function to take in correct time format
-    public void setTimeOfNotification(int timeOfNotification) {
-        this.timeOfNotification = timeOfNotification;
-    }
-
-    //TODO: Change this too
-    public String getTimeOfNotificationAsString() {
-        return Integer.toString(timeOfNotification);
+    public void setDateTimeOfNotification(Calendar timeOfNotification) {
+        this.getDateTimeOfNotification = timeOfNotification;
     }
 
     public boolean getHasPhoto() {
@@ -75,5 +70,38 @@ public class OurNotification {
 
     public void setHasLink(boolean hasLink) {
         this.hasLink = hasLink;
+    }
+
+    public void setLinks(ArrayList<String> links) {
+        this.links = links;
+    }
+
+    public ArrayList<String> getLinks() {
+        return links;
+    }
+
+    public void removeLink(String linkToDelete) {
+        for (String link : links) {
+            if(link.equals(linkToDelete)) {
+                links.remove(link);
+                return;
+            }
+        }
+    }
+
+    public boolean checkIfLinkExists(String linkToCheck) {
+        for (String link : links) {
+            if(link.equals(linkToCheck)) {
+                return true;
+            }
+        }
+
+        return false;
+    }
+
+    public void addLink(String link) {
+        if(!(link.equals("") || link.equals(" "))) {
+            links.add(link);
+        }
     }
 }

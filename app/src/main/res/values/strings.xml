@@ -7,8 +7,13 @@
     <string name="links_title">Links</string>
     <string name="button_add">+</string>
     <string name="link_field_hint">Enter link here...</string>
+    <string name="cancel_button">Cancel</string>
+    <string name="trigger_button">Next: Trigger</string>
 
-    <!--TODO: Replace with correct icon paths - current are just placeholders -->
-    <string name="has_link_icon">@mipmap/ic_launcher_round</string>
-    <string name="has_image_icon">@mipmap/ic_launcher_round</string>
+    <!-- Notification Trigger Fragment Strings -->
+    <string name="triggers_title">Triggers</string>
+    <string name="triggers_set_time_button">Change Time</string>
+    <string name="triggers_set_date_button">Change Date</string>
+    <string name="triggers_save_notification_button">Save Notification</string>
+    <string name="notification_saved">Notification Saved</string>
 </resources>

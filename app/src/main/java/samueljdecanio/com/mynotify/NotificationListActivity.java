@@ -1,5 +1,6 @@
 package samueljdecanio.com.mynotify;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.support.design.widget.FloatingActionButton;
 import android.support.design.widget.Snackbar;
@@ -9,7 +10,11 @@ import android.view.View;
 import android.view.Menu;
 import android.view.MenuItem;
 
+import java.util.UUID;
+
 public class NotificationListActivity extends AppCompatActivity {
+
+    public static final int NOTIFICATION_ID = 888;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -22,8 +27,8 @@ public class NotificationListActivity extends AppCompatActivity {
         fab.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Snackbar.make(view, "Replace with your own action", Snackbar.LENGTH_LONG)
-                        .setAction("Action", null).show();
+                Intent intent = NotificationActivity.newIntent(getBaseContext(), UUID.randomUUID());
+                startActivity(intent);
             }
         });
     }

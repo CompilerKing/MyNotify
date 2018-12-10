@@ -11,9 +11,9 @@ public class NotificationActivity extends SingleFragmentActivity {
 
     public static final String EXTRA_NOTIFICATION_ID = "notification_id";
 
-    public static Intent newIntent(Context packageContext, UUID recipeId) {
+    public static Intent newIntent(Context packageContext, UUID notificationId) {
         Intent intent = new Intent(packageContext, NotificationActivity.class);
-        intent.putExtra(EXTRA_NOTIFICATION_ID, recipeId);
+        intent.putExtra(EXTRA_NOTIFICATION_ID, notificationId);
         return intent;
     }
 
