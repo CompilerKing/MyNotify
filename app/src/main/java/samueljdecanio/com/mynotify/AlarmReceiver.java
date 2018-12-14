@@ -57,7 +57,7 @@ public class AlarmReceiver extends BroadcastReceiver {
                 // Overrides ContentText in the big form of the template.
                 .bigText(mNotification.getTitle())
                 // Overrides ContentTitle in the big form of the template.
-                .setBigContentTitle(mNotification.getDetails())
+                .setBigContentTitle(mNotification.getTitle())
                 // Summary line after the detail section in the big form of the template.
                 // Note: To improve readability, don't overload the user with info. If Summary Text
                 // doesn't add critical information, you should skip it.
